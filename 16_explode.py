@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-df = pd.read_csv("./cartao.csv", sep=';')
+df = pd.read_csv("data/cartao.csv", sep=';')
 df['dtTransacao'] = pd.to_datetime(df['dtTransacao'])
 df['vlParcela'] = df['vlVenda'] / df['qtParcelas']
 df['ordemParcela'] = df['qtParcelas'].apply(lambda x: [i + 1 for i in range(x)])
